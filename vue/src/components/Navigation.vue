@@ -47,10 +47,10 @@ const scrollToSection = (sectionId: string) => {
 }
 
 const navItems = [
-  { id: 'basic', label: 'Basic' },
-  { id: 'scroll', label: 'ScrollTrigger' },
-  { id: 'interactive', label: 'Interactive' },
-  { id: 'advanced', label: 'Advanced' }
+  { id: 'basic', label: 'Basics' },
+  { id: 'scroll', label: 'Components' },
+  { id: 'interactive', label: 'Advanced' },
+  { id: 'advanced', label: 'Forms' }
 ]
 
 onMounted(() => {
@@ -81,11 +81,11 @@ onUnmounted(() => {
   >
     <div class="max-w-6xl mx-auto px-6 py-4">
       <div class="flex justify-between items-center">
-        <h1 
+        <h1
           class="text-2xl font-bold text-white cursor-pointer"
           @click="scrollToSection('hero')"
         >
-          GSAP Examples
+          Vue.js Examples
         </h1>
         
         <ul class="hidden md:flex space-x-8">

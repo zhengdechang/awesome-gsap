@@ -112,17 +112,20 @@ const setFloatingBoxRef = (el: HTMLElement | null, index: number) => {
 
     <!-- Hero content -->
     <div class="relative z-10 max-w-4xl mx-auto px-6">
-      <h1 
+      <h1
         ref="titleRef"
         class="text-6xl md:text-8xl font-bold text-white mb-6 drop-shadow-lg"
       >
-        Awesome GSAP
+        Awesome Vue.js
       </h1>
-      <p 
+      <p
         ref="subtitleRef"
         class="text-xl md:text-2xl text-white text-opacity-90 mb-8"
       >
-        Vue 3 + Composition API Examples
+        Modular Examples Collection
+      </p>
+      <p class="text-lg text-white text-opacity-70 mb-8">
+        Each Vue.js feature is a standalone module with viewable source code
       </p>
       
       <!-- Animated scroll indicator -->

@@ -11,7 +11,13 @@ import ModuleSection from './components/ModuleSection.vue'
 import CodeModal from './components/CodeModal.vue'
 import Footer from './components/Footer.vue'
 
-// Import all animation modules
+// Import Vue.js feature modules
+import ReactiveDataModule from './modules/ReactiveData.vue'
+import ComputedPropertiesModule from './modules/ComputedProperties.vue'
+import ComponentCommunicationModule from './modules/ComponentCommunication.vue'
+import FormHandlingModule from './modules/FormHandling.vue'
+
+// Import GSAP animation modules
 import BasicAnimationsModule from './modules/BasicAnimations.vue'
 import TimelineSequencesModule from './modules/TimelineSequences.vue'
 import TextAnimationsModule from './modules/TextAnimations.vue'
@@ -20,9 +26,6 @@ import ParallaxEffectsModule from './modules/ParallaxEffects.vue'
 import CardRevealsModule from './modules/CardReveals.vue'
 import HoverInteractionsModule from './modules/HoverInteractions.vue'
 import MouseFollowModule from './modules/MouseFollow.vue'
-import SvgPathModule from './modules/SvgPath.vue'
-import ShapeMorphingModule from './modules/ShapeMorphing.vue'
-import LoadingAnimationsModule from './modules/LoadingAnimations.vue'
 
 onMounted(() => {
   // Register GSAP plugins
@@ -38,55 +41,56 @@ onMounted(() => {
 })
 
 const basicModules = [
-  { id: 'basic-animations', name: 'Basic Tweens', component: BasicAnimationsModule },
-  { id: 'timeline-sequences', name: 'Timeline Sequences', component: TimelineSequencesModule },
-  { id: 'text-animations', name: 'Text Animations', component: TextAnimationsModule }
+  { id: 'reactive-data', name: 'Reactive Data', component: ReactiveDataModule },
+  { id: 'computed-properties', name: 'Computed Properties', component: ComputedPropertiesModule },
+  { id: 'basic-animations', name: 'Basic Tweens', component: BasicAnimationsModule }
 ]
 
 const scrollModules = [
+  { id: 'component-communication', name: 'Component Communication', component: ComponentCommunicationModule },
   { id: 'scroll-trigger', name: 'ScrollTrigger', component: ScrollTriggerModule },
-  { id: 'parallax-effects', name: 'Parallax Effects', component: ParallaxEffectsModule },
-  { id: 'card-reveals', name: 'Card Reveals', component: CardRevealsModule }
+  { id: 'parallax-effects', name: 'Parallax Effects', component: ParallaxEffectsModule }
 ]
 
 const interactiveModules = [
+  { id: 'timeline-sequences', name: 'Timeline Sequences', component: TimelineSequencesModule },
   { id: 'hover-interactions', name: 'Hover Interactions', component: HoverInteractionsModule },
   { id: 'mouse-follow', name: 'Mouse Follow', component: MouseFollowModule }
 ]
 
 const advancedModules = [
-  { id: 'svg-path', name: 'SVG Path Animation', component: SvgPathModule },
-  { id: 'shape-morphing', name: 'Shape Morphing', component: ShapeMorphingModule },
-  { id: 'loading-animations', name: 'Loading Animations', component: LoadingAnimationsModule }
+  { id: 'form-handling', name: 'Form Handling', component: FormHandlingModule },
+  { id: 'text-animations', name: 'Text Animations', component: TextAnimationsModule },
+  { id: 'card-reveals', name: 'Card Reveals', component: CardRevealsModule }
 ]
 </script>
 
 <template>
-  <main class="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900">
+  <main class="min-h-screen bg-gradient-to-br from-emerald-900 via-teal-900 to-cyan-900">
     <Navigation />
     <Hero />
 
     <ModuleSection
       id="basic"
-      title="Basic Animations"
+      title="Basic Vue.js Features"
       :modules="basicModules"
     />
 
     <ModuleSection
       id="scroll"
-      title="Scroll-Based Animations"
+      title="Component Features"
       :modules="scrollModules"
     />
 
     <ModuleSection
       id="interactive"
-      title="Interactive Animations"
+      title="Advanced Features"
       :modules="interactiveModules"
     />
 
     <ModuleSection
       id="advanced"
-      title="Advanced Animations"
+      title="Forms & Interactions"
       :modules="advancedModules"
     />
 

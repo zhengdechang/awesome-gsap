@@ -33,3 +33,96 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.5);
 }
+
+/* Vue.js Modular Styles - Similar to HTML version */
+:root {
+  --vue-green: #42b883;
+  --vue-dark: #35495e;
+  --vue-light: #4fc08d;
+}
+
+/* Section Styles */
+.section {
+  @apply py-20;
+}
+
+.section:nth-child(even) {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.container {
+  @apply max-w-6xl mx-auto px-6;
+}
+
+.section-title {
+  @apply text-4xl font-bold text-center text-white mb-12;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Modules Grid */
+.modules-grid {
+  @apply flex flex-col gap-6;
+}
+
+/* Module Cards */
+.module-card {
+  @apply bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20;
+  @apply transition-all duration-300 hover:bg-white/15 hover:-translate-y-1 hover:shadow-2xl;
+  @apply flex flex-col gap-6 min-h-[200px];
+}
+
+/* Module Header */
+.module-header {
+  @apply flex justify-between items-center;
+}
+
+.module-header h3 {
+  @apply text-xl font-semibold text-white m-0;
+}
+
+/* Code Icon Button */
+.code-icon {
+  @apply w-8 h-8 bg-white/10 border border-white/30 rounded-lg;
+  @apply flex items-center justify-center cursor-pointer;
+  @apply transition-all duration-300 hover:bg-white/20 hover:scale-110;
+  @apply text-white/70 hover:text-white;
+}
+
+.code-icon svg {
+  @apply w-4 h-4;
+}
+
+/* Module Demo Area */
+.module-demo {
+  @apply flex-1 bg-black/20 rounded-xl p-8 min-h-[150px];
+  @apply flex items-center justify-center;
+  @apply border border-white/10;
+}
+
+/* Demo Button */
+.demo-btn {
+  @apply bg-gradient-to-r from-emerald-500 to-teal-600;
+  @apply hover:from-emerald-600 hover:to-teal-700;
+  @apply text-white border-none px-6 py-3 rounded-full cursor-pointer;
+  @apply font-semibold transition-all duration-300;
+  @apply hover:-translate-y-0.5 hover:shadow-lg;
+  @apply uppercase tracking-wide;
+  box-shadow: 0 4px 15px rgba(66, 184, 131, 0.3);
+}
+
+.demo-btn:hover {
+  box-shadow: 0 6px 20px rgba(66, 184, 131, 0.4);
+}
+
+.demo-btn:active {
+  @apply translate-y-0;
+}
+
+.demo-btn.running {
+  @apply bg-gray-500 cursor-not-allowed;
+  @apply hover:translate-y-0 hover:shadow-none;
+}
+
+.demo-btn:disabled {
+  @apply opacity-70 cursor-not-allowed;
+}
