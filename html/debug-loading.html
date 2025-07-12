@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug Loading Animations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #1a1a1a;
+            color: white;
+        }
+        
+        .loader {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+            min-height: 100px;
+            margin: 20px 0;
+        }
+
+        .loader-dot {
+            width: 20px;
+            height: 20px;
+            background: #00ff88;
+            border-radius: 50%;
+            box-shadow: 0 4px 15px rgba(0, 255, 136, 0.3);
+        }
+        
+        .test-btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        
+        .test-btn:hover {
+            background: #5a6fd8;
+        }
+        
+        .debug-info {
+            background: #333;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>Debug Loading Animations</h1>
+    
+    <div id="loading-animations-demo">
+        <div class="loader">
+            <div class="loader-dot"></div>
+            <div class="loader-dot"></div>
+            <div class="loader-dot"></div>
+        </div>
+    </div>
+    
+    <button class="test-btn" onclick="testLoadingModule()">Test Loading Module</button>
+    <button class="test-btn" onclick="runLoadingAnimation()">Run Animation Directly</button>
+    <button class="test-btn" onclick="debugModuleRegistry()">Debug Module Registry</button>
+    
+    <div id="debug-output" class="debug-info"></div>
+
+    <!-- GSAP Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    
+    <!-- Loading Animations Module -->
+    <script src="modules/loading-animations/loading-animations.js"></script>
+    
+    <!-- Module Loader -->
+    <script src="js/module-loader.js"></script>
+    
+    <script>
+        function debugLog(message) {
+            const output = document.getElementById('debug-output');
+            output.innerHTML += message + '<br>';
+            console.log(message);
+        }
+        
+        function testLoadingModule() {
+            debugLog('=== Testing Loading Module ===');
+            debugLog('Checking if GSAPModules exists: ' + (typeof window.GSAPModules !== 'undefined'));
+            debugLog('Available modules: ' + Object.keys(window.GSAPModules || {}));
+            
+            if (window.GSAPModules && window.GSAPModules['loading-animations']) {
+                debugLog('✅ loading-animations module found');
+                debugLog('Module name: ' + window.GSAPModules['loading-animations'].name);
+                debugLog('Has init function: ' + (typeof window.GSAPModules['loading-animations'].init === 'function'));
+                
+                // Try to load the module
+                try {
+                    loadModule('loading-animations');
+                    debugLog('✅ loadModule called successfully');
+                } catch (error) {
+                    debugLog('❌ Error calling loadModule: ' + error.message);
+                }
+            } else {
+                debugLog('❌ loading-animations module not found');
+            }
+        }
+        
+        function runLoadingAnimation() {
+            debugLog('=== Running Animation Directly ===');
+            const loaderDots = document.querySelectorAll('#loading-animations-demo .loader-dot');
+            debugLog('Found loader dots: ' + loaderDots.length);
+            
+            if (loaderDots.length > 0) {
+                // Reset dots
+                gsap.set(loaderDots, {
+                    scale: 1,
+                    backgroundColor: "#00ff88"
+                });
+                
+                // Run animation
+                gsap.to(loaderDots, {
+                    scale: 1.5,
+                    backgroundColor: "#ff6b6b",
+                    duration: 0.6,
+                    ease: "power2.inOut",
+                    stagger: 0.2,
+                    repeat: 3,
+                    yoyo: true,
+                    onComplete: () => {
+                        gsap.set(loaderDots, {
+                            scale: 1,
+                            backgroundColor: "#00ff88"
+                        });
+                        debugLog('✅ Animation completed');
+                    }
+                });
+                debugLog('✅ Animation started');
+            } else {
+                debugLog('❌ No loader dots found');
+            }
+        }
+        
+        function debugModuleRegistry() {
+            debugLog('=== Module Registry Debug ===');
+            debugLog('window.GSAPModules: ' + JSON.stringify(Object.keys(window.GSAPModules || {}), null, 2));
+            debugLog('loadModule function exists: ' + (typeof loadModule === 'function'));
+        }
+        
+        // Auto-debug on load
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                debugLog('Page loaded, running initial debug...');
+                debugModuleRegistry();
+            }, 500);
+        });
+    </script>
+</body>
+</html>

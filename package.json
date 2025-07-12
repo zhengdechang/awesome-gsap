@@ -1,0 +1,36 @@
+{
+  "name": "awesome-gsap",
+  "version": "1.0.0",
+  "description": "Comprehensive GSAP examples across HTML, React, and Vue frameworks",
+  "main": "index.js",
+  "scripts": {
+    "install:all": "npm run install:react && npm run install:vue",
+    "install:react": "cd react && npm install",
+    "install:vue": "cd vue && npm install",
+    "dev:react": "cd react && npm run dev",
+    "dev:vue": "cd vue && npm run dev",
+    "build:all": "npm run build:react && npm run build:vue",
+    "build:react": "cd react && npm run build",
+    "build:vue": "cd vue && npm run build",
+    "serve:html": "cd html && python3 -m http.server 8080 || python -m http.server 8080"
+  },
+  "keywords": [
+    "gsap",
+    "animation",
+    "react",
+    "vue",
+    "javascript",
+    "frontend",
+    "examples"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/awesome-gsap.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/awesome-gsap/issues"
+  },
+  "homepage": "https://github.com/your-username/awesome-gsap#readme"
+}

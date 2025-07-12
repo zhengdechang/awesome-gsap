@@ -1,0 +1,58 @@
+/* Mouse Follow Module CSS */
+
+.mouse-follow-area {
+    position: relative;
+    cursor: none;
+    min-height: 150px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    user-select: none;
+}
+
+.mouse-follow-area p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.1rem;
+    margin: 0;
+    pointer-events: none;
+    z-index: 1;
+    position: relative;
+}
+
+.follower {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #00ff88;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 10;
+    opacity: 0;
+    transform: scale(0);
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+    transition: box-shadow 0.3s ease;
+}
+
+.follower.active {
+    box-shadow: 0 0 30px rgba(0, 255, 136, 0.8);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .mouse-follow-area {
+        min-height: 120px;
+        cursor: default;
+    }
+    
+    .mouse-follow-area p {
+        font-size: 1rem;
+    }
+    
+    .follower {
+        width: 16px;
+        height: 16px;
+    }
+}

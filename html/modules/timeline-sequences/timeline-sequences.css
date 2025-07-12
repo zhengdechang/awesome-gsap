@@ -1,0 +1,38 @@
+/* Timeline Sequences Module CSS */
+
+.timeline-box {
+    width: 80px;
+    height: 80px;
+    background: #ff6b6b;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    user-select: none;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+.timeline-box:hover {
+    background: #ff5252;
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+}
+
+/* Animation states */
+.timeline-box.animating {
+    pointer-events: none;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .timeline-box {
+        width: 60px;
+        height: 60px;
+        font-size: 1.2rem;
+    }
+}

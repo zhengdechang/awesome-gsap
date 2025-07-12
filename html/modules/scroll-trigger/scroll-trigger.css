@@ -1,0 +1,45 @@
+/* ScrollTrigger Module CSS */
+
+.scroll-box {
+    width: 150px;
+    height: 150px;
+    background: #ff6b6b;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    cursor: default;
+    user-select: none;
+    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+    transition: box-shadow 0.3s ease;
+}
+
+.scroll-box:hover {
+    box-shadow: 0 12px 35px rgba(255, 107, 107, 0.4);
+}
+
+/* Animation states */
+.scroll-box.triggered {
+    background: #00ff88;
+    box-shadow: 0 8px 25px rgba(0, 255, 136, 0.3);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .scroll-box {
+        width: 120px;
+        height: 120px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .scroll-box {
+        width: 100px;
+        height: 100px;
+        font-size: 0.8rem;
+    }
+}

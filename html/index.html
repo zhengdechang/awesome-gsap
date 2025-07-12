@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awesome GSAP - Modular Examples</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/modules.css">
+
+    <!-- Module CSS Files -->
+    <link rel="stylesheet" href="modules/basic-animations/basic-animations.css">
+    <link rel="stylesheet" href="modules/timeline-sequences/timeline-sequences.css">
+    <link rel="stylesheet" href="modules/text-animations/text-animations.css">
+    <link rel="stylesheet" href="modules/scroll-trigger/scroll-trigger.css">
+    <link rel="stylesheet" href="modules/parallax-effects/parallax-effects.css">
+    <link rel="stylesheet" href="modules/card-reveals/card-reveals.css">
+    <link rel="stylesheet" href="modules/hover-interactions/hover-interactions.css">
+    <link rel="stylesheet" href="modules/mouse-follow/mouse-follow.css">
+    <link rel="stylesheet" href="modules/svg-path/svg-path.css">
+    <link rel="stylesheet" href="modules/shape-morphing/shape-morphing.css">
+    <link rel="stylesheet" href="modules/loading-animations/loading-animations.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/MotionPathPlugin.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-title">GSAP Modular Examples</h1>
+            <ul class="nav-menu">
+                <li><a href="#basic" class="nav-link">Basic</a></li>
+                <li><a href="#scroll" class="nav-link">Scroll</a></li>
+                <li><a href="#interactive" class="nav-link">Interactive</a></li>
+                <li><a href="#advanced" class="nav-link">Advanced</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Awesome GSAP</h1>
+            <p class="hero-subtitle">Modular Examples Collection</p>
+            <p class="hero-description">Each animation is a standalone module with viewable source code</p>
+            <div class="hero-animation">
+                <div class="floating-box box-1"></div>
+                <div class="floating-box box-2"></div>
+                <div class="floating-box box-3"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Basic Animations Section -->
+    <section id="basic" class="section">
+        <div class="container">
+            <h2 class="section-title">Basic Animations</h2>
+            <div class="modules-grid">
+                <!-- Basic Animations Module -->
+                <div class="module-card">
+                    <div class="module-header">
+                        <h3>Basic Tweens</h3>
+                        <div class="code-icon" onclick="showCode('basic-animations')">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0L19.2 12l-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="module-demo" id="basic-animations-demo">
+                        <div class="tween-box" data-animation="scale">Scale</div>
+                        <div class="tween-box" data-animation="rotate">Rotate</div>
+                        <div class="tween-box" data-animation="move">Move</div>
+                    </div>
+                    <button class="demo-btn" onclick="loadModule('basic-animations')">Run Demo</button>
+                </div>
+
+                <!-- Timeline Sequences Module -->
+                <div class="module-card">
+                    <div class="module-header">
+                        <h3>Timeline Sequences</h3>
+                        <div class="code-icon" onclick="showCode('timeline-sequences')">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0L19.2 12l-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="module-demo" id="timeline-sequences-demo">
+                        <div class="timeline-box">1</div>
+                        <div class="timeline-box">2</div>
+                        <div class="timeline-box">3</div>
+                        <div class="timeline-box">4</div>
+                    </div>
+                    <button class="demo-btn" onclick="loadModule('timeline-sequences')">Run Demo</button>
+                </div>
+
+                <!-- Text Animations Module -->
+                <div class="module-card">
+                    <div class="module-header">
+                        <h3>Text Animations</h3>
+                        <div class="code-icon" onclick="showCode('text-animations')">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0L19.2 12l-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="module-demo" id="text-animations-demo">
+                        <h2 class="animated-text">Hello GSAP World!</h2>
+                    </div>
+                    <button class="demo-btn" onclick="loadModule('text-animations')">Run Demo</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ScrollTrigger Section -->
+    <section id="scroll" class="section scroll-section">
+        <div class="container">
+            <h2 class="section-title">Scroll-Based Animations</h2>
+            <div class="modules-grid">
+                <!-- ScrollTrigger Module -->
+                <div class="module-card">
+                    <div class="module-header">
+                        <h3>ScrollTrigger</h3>
+                        <div class="code-icon" onclick="showCode('scroll-trigger')">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0L19.2 12l-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="module-demo" id="scroll-trigger-demo">
+                        <div class="scroll-box">Scroll to animate</div>
+                    </div>
+                    <button class="demo-btn" onclick="loadModule('scroll-trigger')">Run Demo</button>
+                </div>
+
+                <!-- Parallax Effects Module -->
+                <div class="module-card">
+                    <div class="module-header">
+                        <h3>Parallax Effects</h3>
+                        <div class="code-icon" onclick="showCode('parallax-effects')">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0L19.2 12l-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="module-demo" id="parallax-effects-demo">
+                        <div class="parallax-container">
+                            <div class="parallax-bg"></div>
+                            <div class="parallax-content">
+                                <h4>Parallax Effect</h4>
+                                <p>Background moves differently</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="demo-btn" onclick="loadModule('parallax-effects')">Run Demo</button>
+                </div>
+
+                <!-- Card Reveals Module -->
+                <div class="module-card">
+                    <div class="module-header">
+                        <h3>Card Reveals</h3>
+                        <div class="code-icon" onclick="showCode('card-reveals')">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0L19.2 12l-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="module-demo" id="card-reveals-demo">
+                        <div class="reveal-cards">
+                            <div class="card">Card 1</div>
+                            <div class="card">Card 2</div>
+                            <div class="card">Card 3</div>
+                            <div class="card">Card 4</div>
+                        </div>
+                    </div>
+                    <button class="demo-btn" onclick="loadModule('card-reveals')">Run Demo</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Section -->
+    <section id="interactive" class="section">
+        <div class="container">
+            <h2 class="section-title">Interactive Animations</h2>
+            <div class="modules-grid">
+                <!-- Hover Interactions Module -->
+                <div class="module-card">
+                    <div class="module-header">
+                        <h3>Hover Interactions</h3>
+                        <div class="code-icon" onclick="showCode('hover-interactions')">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0L19.2 12l-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="module-demo" id="hover-interactions-demo">
+                        <div class="hover-box">Hover Me</div>
+                        <div class="hover-box">Click Me</div>
+                    </div>
+                    <button class="demo-btn" onclick="loadModule('hover-interactions')">Run Demo</button>
+                </div>
+
+                <!-- Mouse Follow Module -->
+                <div class="module-card">
+                    <div class="module-header">
+                        <h3>Mouse Follow</h3>
+                        <div class="code-icon" onclick="showCode('mouse-follow')">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0L19.2 12l-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="module-demo" id="mouse-follow-demo">
+                        <div class="mouse-follow-area">
+                            <div class="follower"></div>
+                            <p>Move your mouse here</p>
+                        </div>
+                    </div>
+                    <button class="demo-btn" onclick="loadModule('mouse-follow')">Run Demo</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advanced Section -->
+    <section id="advanced" class="section">
+        <div class="container">
+            <h2 class="section-title">Advanced Animations</h2>
+            <div class="modules-grid">
+                <!-- SVG Path Animation Module -->
+                <div class="module-card">
+                    <div class="module-header">
+                        <h3>SVG Path Animation</h3>
+                        <div class="code-icon" onclick="showCode('svg-path')">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0L19.2 12l-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="module-demo" id="svg-path-demo">
+                        <svg width="300" height="200" viewBox="0 0 300 200">
+                            <path class="motion-path" d="M50,100 Q150,50 250,100" stroke="#00ff88" stroke-width="2" fill="none"/>
+                            <circle class="path-follower" r="8" fill="#ff6b6b"/>
+                        </svg>
+                    </div>
+                    <button class="demo-btn" onclick="loadModule('svg-path')">Run Demo</button>
+                </div>
+
+                <!-- Shape Morphing Module -->
+                <div class="module-card">
+                    <div class="module-header">
+                        <h3>Shape Morphing</h3>
+                        <div class="code-icon" onclick="showCode('shape-morphing')">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0L19.2 12l-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="module-demo" id="shape-morphing-demo">
+                        <svg width="200" height="200" viewBox="0 0 200 200">
+                            <path class="morph-shape" d="M100,50 L150,150 L50,150 Z" fill="#00ff88"/>
+                        </svg>
+                    </div>
+                    <button class="demo-btn" onclick="loadModule('shape-morphing')">Run Demo</button>
+                </div>
+
+                <!-- Loading Animations Module -->
+                <div class="module-card">
+                    <div class="module-header">
+                        <h3>Loading Animations</h3>
+                        <div class="code-icon" onclick="showCode('loading-animations')">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="module-demo" id="loading-animations-demo">
+                        <div class="loader">
+                            <div class="loader-dot"></div>
+                            <div class="loader-dot"></div>
+                            <div class="loader-dot"></div>
+                        </div>
+                    </div>
+                    <button class="demo-btn" onclick="loadModule('loading-animations')">Run Demo</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Code Viewer Modal -->
+    <div id="code-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">Module Code</h3>
+                <button class="close-btn" onclick="closeCodeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="code-tabs">
+                    <button class="tab-btn active" onclick="showTab('html')">HTML</button>
+                    <button class="tab-btn" onclick="showTab('css')">CSS</button>
+                    <button class="tab-btn" onclick="showTab('js')">JavaScript</button>
+                </div>
+                <div class="code-content">
+                    <pre id="html-code" class="code-block active"><code class="language-html"></code></pre>
+                    <pre id="css-code" class="code-block"><code class="language-css"></code></pre>
+                    <pre id="js-code" class="code-block"><code class="language-javascript"></code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Awesome GSAP Modular Examples. Built with ❤️ and GSAP.</p>
+        </div>
+    </footer>
+
+    <!-- Module Scripts -->
+    <script src="modules/basic-animations/basic-animations.js"></script>
+    <script src="modules/timeline-sequences/timeline-sequences.js"></script>
+    <script src="modules/text-animations/text-animations.js"></script>
+    <script src="modules/scroll-trigger/scroll-trigger.js"></script>
+    <script src="modules/parallax-effects/parallax-effects.js"></script>
+    <script src="modules/card-reveals/card-reveals.js"></script>
+    <script src="modules/hover-interactions/hover-interactions.js"></script>
+    <script src="modules/mouse-follow/mouse-follow.js"></script>
+    <script src="modules/svg-path/svg-path.js"></script>
+    <script src="modules/shape-morphing/shape-morphing.js"></script>
+    <script src="modules/loading-animations/loading-animations.js"></script>
+
+    <!-- Code Viewer -->
+    <script src="js/code-viewer-simple.js"></script>
+
+    <!-- Main Module Loader -->
+    <script src="js/module-loader.js"></script>
+    <script src="js/main-modular.js"></script>
+</body>
+</html>

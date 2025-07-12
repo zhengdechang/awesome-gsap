@@ -1,0 +1,35 @@
+/* Basic Animations Module CSS */
+
+.tween-box {
+    width: 80px;
+    height: 80px;
+    background: #00ff88;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.tween-box:hover {
+    background: #00cc6a;
+    transform: scale(1.05);
+}
+
+/* Animation states */
+.tween-box.animating {
+    pointer-events: none;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .tween-box {
+        width: 60px;
+        height: 60px;
+        font-size: 0.8rem;
+    }
+}

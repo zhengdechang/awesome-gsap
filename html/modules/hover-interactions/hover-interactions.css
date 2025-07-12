@@ -1,0 +1,55 @@
+/* Hover Interactions Module CSS */
+
+.hover-box {
+    width: 100px;
+    height: 100px;
+    background: #4ecdc4;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    user-select: none;
+    box-shadow: 0 4px 15px rgba(78, 205, 196, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.hover-box::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+}
+
+.hover-box:hover::before {
+    width: 120%;
+    height: 120%;
+}
+
+.hover-box:hover {
+    box-shadow: 0 8px 25px rgba(78, 205, 196, 0.4);
+}
+
+/* Animation states */
+.hover-box.animating {
+    pointer-events: none;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .hover-box {
+        width: 80px;
+        height: 80px;
+        font-size: 0.9rem;
+    }
+}

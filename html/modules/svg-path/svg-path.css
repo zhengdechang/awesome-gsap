@@ -1,0 +1,51 @@
+/* SVG Path Animation Module CSS */
+
+.svg-path-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    padding: 1rem;
+}
+
+.svg-path-container svg {
+    max-width: 100%;
+    height: auto;
+}
+
+.motion-path {
+    stroke: #00ff88;
+    stroke-width: 2;
+    fill: none;
+    stroke-dasharray: 5, 5;
+    animation: dash 2s linear infinite;
+}
+
+@keyframes dash {
+    to {
+        stroke-dashoffset: -10;
+    }
+}
+
+.path-follower {
+    fill: #ff6b6b;
+    filter: drop-shadow(0 0 10px rgba(255, 107, 107, 0.5));
+    transform-origin: center;
+}
+
+.path-follower.animating {
+    filter: drop-shadow(0 0 20px rgba(255, 107, 107, 0.8));
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .svg-path-container {
+        min-height: 150px;
+        padding: 0.5rem;
+    }
+    
+    .svg-path-container svg {
+        width: 100%;
+        max-width: 280px;
+    }
+}

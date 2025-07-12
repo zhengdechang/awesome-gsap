@@ -1,0 +1,35 @@
+/* Loading Animations Module CSS */
+
+.loader {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    min-height: 100px;
+}
+
+.loader-dot {
+    width: 20px;
+    height: 20px;
+    background: #00ff88;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0, 255, 136, 0.3);
+    transition: box-shadow 0.3s ease;
+}
+
+.loader-dot.animating {
+    box-shadow: 0 6px 25px rgba(0, 255, 136, 0.5);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .loader {
+        min-height: 80px;
+        gap: 8px;
+    }
+    
+    .loader-dot {
+        width: 16px;
+        height: 16px;
+    }
+}

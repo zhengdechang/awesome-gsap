@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Code Viewer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #1a1a1a;
+            color: white;
+        }
+        
+        .test-btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        
+        .test-btn:hover {
+            background: #5a6fd8;
+        }
+        
+        /* Modal styles (copied from modules.css) */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 10000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background: #1a1a1a;
+            margin: 2% auto;
+            padding: 0;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 1000px;
+            max-height: 90vh;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            background: #2a2a2a;
+            border-bottom: 1px solid #333;
+        }
+
+        .modal-header h3 {
+            color: white;
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            color: #999;
+            font-size: 2rem;
+            cursor: pointer;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .close-btn:hover {
+            background: #333;
+            color: white;
+        }
+
+        .modal-body {
+            height: calc(90vh - 100px);
+            overflow: hidden;
+        }
+
+        .code-tabs {
+            display: flex;
+            background: #2a2a2a;
+            border-bottom: 1px solid #333;
+        }
+
+        .tab-btn {
+            background: none;
+            border: none;
+            color: #999;
+            padding: 1rem 2rem;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+
+        .tab-btn:hover {
+            color: white;
+            background: #333;
+        }
+
+        .tab-btn.active {
+            color: #00ff88;
+            border-bottom-color: #00ff88;
+            background: #333;
+        }
+
+        .code-content {
+            height: calc(100% - 60px);
+            overflow: auto;
+        }
+
+        .code-block {
+            display: none;
+            margin: 0;
+            padding: 2rem;
+            background: #1a1a1a;
+            color: #f8f8f2;
+            font-family: 'Fira Code', 'Monaco', 'Consolas', monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            overflow: auto;
+            height: 100%;
+            white-space: pre-wrap;
+        }
+
+        .code-block.active {
+            display: block;
+        }
+
+        .code-block code {
+            background: none;
+            padding: 0;
+            font-size: inherit;
+            color: inherit;
+        }
+    </style>
+</head>
+<body>
+    <h1>Code Viewer Test</h1>
+    <p>Click the buttons below to test the code viewer for different modules:</p>
+    
+    <button class="test-btn" onclick="showCode('basic-animations')">Basic Animations</button>
+    <button class="test-btn" onclick="showCode('scroll-trigger')">ScrollTrigger</button>
+    <button class="test-btn" onclick="showCode('parallax-effects')">Parallax Effects</button>
+    <button class="test-btn" onclick="showCode('card-reveals')">Card Reveals</button>
+    <button class="test-btn" onclick="showCode('hover-interactions')">Hover Interactions</button>
+    <button class="test-btn" onclick="showCode('mouse-follow')">Mouse Follow</button>
+    <button class="test-btn" onclick="showCode('svg-path')">SVG Path</button>
+    <button class="test-btn" onclick="showCode('shape-morphing')">Shape Morphing</button>
+    <button class="test-btn" onclick="showCode('loading-animations')">Loading Animations</button>
+
+    <!-- Code Viewer Modal -->
+    <div id="code-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">Module Code</h3>
+                <button class="close-btn" onclick="closeCodeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="code-tabs">
+                    <button class="tab-btn active" onclick="showTab('html')">HTML</button>
+                    <button class="tab-btn" onclick="showTab('css')">CSS</button>
+                    <button class="tab-btn" onclick="showTab('js')">JavaScript</button>
+                </div>
+                <div class="code-content">
+                    <pre id="html-code" class="code-block active"><code class="language-html"></code></pre>
+                    <pre id="css-code" class="code-block"><code class="language-css"></code></pre>
+                    <pre id="js-code" class="code-block"><code class="language-javascript"></code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/code-viewer-simple.js"></script>
+</body>
+</html>

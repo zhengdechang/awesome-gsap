@@ -1,0 +1,38 @@
+/* Shape Morphing Module CSS */
+
+.shape-morphing-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    padding: 1rem;
+}
+
+.shape-morphing-container svg {
+    max-width: 100%;
+    height: auto;
+}
+
+.morph-shape {
+    fill: #00ff88;
+    transition: fill 0.3s ease;
+    filter: drop-shadow(0 4px 15px rgba(0, 255, 136, 0.3));
+    transform-origin: center;
+}
+
+.morph-shape.animating {
+    filter: drop-shadow(0 6px 25px rgba(0, 255, 136, 0.5));
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .shape-morphing-container {
+        min-height: 150px;
+        padding: 0.5rem;
+    }
+    
+    .shape-morphing-container svg {
+        width: 100%;
+        max-width: 180px;
+    }
+}
