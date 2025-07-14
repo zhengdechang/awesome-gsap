@@ -36,7 +36,7 @@
     },
     {
       "src": "/$",
-      "dest": "/index.html"
+      "dest": "/react/index.html"
     },
     {
       "src": "/(.*)",
