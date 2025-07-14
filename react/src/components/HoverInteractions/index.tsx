@@ -1,15 +1,11 @@
-'use client'
+"use client";
 
-import { useRef } from 'react'
-import { gsap } from 'gsap'
+import { useRef } from "react";
+import { gsap } from "gsap";
 
-interface HoverInteractionsProps {
-  onRunDemo: () => void
-}
-
-export default function HoverInteractions({ onRunDemo }: HoverInteractionsProps) {
-  const hoverBoxRef = useRef<HTMLDivElement>(null)
-  const clickBoxRef = useRef<HTMLDivElement>(null)
+export default function HoverInteractions() {
+  const hoverBoxRef = useRef<HTMLDivElement>(null);
+  const clickBoxRef = useRef<HTMLDivElement>(null);
 
   const handleHoverEnter = () => {
     if (hoverBoxRef.current) {
@@ -18,10 +14,10 @@ export default function HoverInteractions({ onRunDemo }: HoverInteractionsProps)
         rotation: 15,
         backgroundColor: "#ff6b6b",
         duration: 0.3,
-        ease: "back.out(1.7)"
-      })
+        ease: "back.out(1.7)",
+      });
     }
-  }
+  };
 
   const handleHoverLeave = () => {
     if (hoverBoxRef.current) {
@@ -30,10 +26,10 @@ export default function HoverInteractions({ onRunDemo }: HoverInteractionsProps)
         rotation: 0,
         backgroundColor: "#4ecdc4",
         duration: 0.3,
-        ease: "power2.out"
-      })
+        ease: "power2.out",
+      });
     }
-  }
+  };
 
   const handleClick = () => {
     if (clickBoxRef.current) {
@@ -53,30 +49,29 @@ export default function HoverInteractions({ onRunDemo }: HoverInteractionsProps)
               gsap.to(clickBoxRef.current, {
                 backgroundColor: "#4ecdc4",
                 duration: 0.3,
-                delay: 0.2
-              })
-            }
-          })
-        }
-      })
+                delay: 0.2,
+              });
+            },
+          });
+        },
+      });
     }
-    onRunDemo()
-  }
+  };
 
   const runAnimation = () => {
     // Demo both interactions
-    handleHoverEnter()
+    handleHoverEnter();
     setTimeout(() => {
-      handleHoverLeave()
+      handleHoverLeave();
       setTimeout(() => {
-        handleClick()
-      }, 500)
-    }, 1000)
-  }
+        handleClick();
+      }, 500);
+    }, 1000);
+  };
 
   return (
     <div className="flex gap-6 justify-center items-center">
-      <div 
+      <div
         ref={hoverBoxRef}
         className="w-24 h-24 bg-teal-400 rounded-lg flex items-center justify-center text-gray-800 font-bold cursor-pointer select-none shadow-lg"
         onMouseEnter={handleHoverEnter}
@@ -85,7 +80,7 @@ export default function HoverInteractions({ onRunDemo }: HoverInteractionsProps)
       >
         Hover Me
       </div>
-      <div 
+      <div
         ref={clickBoxRef}
         className="w-24 h-24 bg-teal-400 rounded-lg flex items-center justify-center text-gray-800 font-bold cursor-pointer select-none shadow-lg hover:scale-105 transition-transform"
         onClick={handleClick}
@@ -93,5 +88,5 @@ export default function HoverInteractions({ onRunDemo }: HoverInteractionsProps)
         Click Me
       </div>
     </div>
-  )
+  );
 }

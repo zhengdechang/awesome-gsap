@@ -1,54 +1,52 @@
-'use client'
+"use client";
 
-import { useState, useEffect } from 'react'
-import { useCodeModal } from '@/hooks/useCodeModal'
-import { getModuleCode } from '@/utils/moduleCode'
+import { useState, useEffect } from "react";
+import { useCodeModal } from "@/hooks/useCodeModal";
+import { getModuleCode } from "@/utils/moduleCode";
 
 export default function CodeModal() {
-  const { isOpen, currentModule, hideCode } = useCodeModal()
-  const [activeTab, setActiveTab] = useState<'html' | 'css' | 'js'>('html')
-  const [code, setCode] = useState({ html: '', css: '', js: '' })
+  const { isOpen, currentModule, hideCode } = useCodeModal();
+  const [code, setCode] = useState("");
 
   useEffect(() => {
     if (isOpen && currentModule) {
-      const moduleCode = getModuleCode(currentModule)
-      setCode(moduleCode)
-      setActiveTab('html')
+      const moduleCode = getModuleCode(currentModule);
+      setCode(moduleCode);
     }
-  }, [isOpen, currentModule])
+  }, [isOpen, currentModule]);
 
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        hideCode()
+      if (e.key === "Escape") {
+        hideCode();
       }
-    }
+    };
 
     if (isOpen) {
-      document.addEventListener('keydown', handleEscape)
-      document.body.style.overflow = 'hidden'
+      document.addEventListener("keydown", handleEscape);
+      document.body.style.overflow = "hidden";
     }
 
     return () => {
-      document.removeEventListener('keydown', handleEscape)
-      document.body.style.overflow = 'unset'
-    }
-  }, [isOpen, hideCode])
+      document.removeEventListener("keydown", handleEscape);
+      document.body.style.overflow = "unset";
+    };
+  }, [isOpen, hideCode]);
 
-  if (!isOpen || !currentModule) return null
+  if (!isOpen || !currentModule) return null;
 
   const handleBackdropClick = (e: React.MouseEvent) => {
     if (e.target === e.currentTarget) {
-      hideCode()
+      hideCode();
     }
-  }
+  };
 
   const formatModuleName = (moduleId: string) => {
     return moduleId
-      .split('-')
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(' ')
-  }
+      .split("-")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
+  };
 
   return (
     <div
@@ -59,7 +57,7 @@ export default function CodeModal() {
         {/* Modal Header */}
         <div className="flex justify-between items-center p-6 bg-gray-800 border-b border-gray-700">
           <h3 className="text-xl font-semibold text-white">
-            {formatModuleName(currentModule)} - Code
+            {formatModuleName(currentModule)} - React Component
           </h3>
           <button
             onClick={hideCode}
@@ -83,33 +81,14 @@ export default function CodeModal() {
 
         {/* Modal Body */}
         <div className="flex flex-col h-[calc(90vh-80px)]">
-          {/* Code Tabs */}
-          <div className="flex bg-gray-800 border-b border-gray-700">
-            {(['html', 'css', 'js'] as const).map((tab) => (
-              <button
-                key={tab}
-                onClick={() => setActiveTab(tab)}
-                className={`
-                  px-6 py-3 font-medium transition-colors border-b-2
-                  ${activeTab === tab
-                    ? 'text-green-400 border-green-400 bg-gray-700'
-                    : 'text-gray-400 border-transparent hover:text-white hover:bg-gray-700'
-                  }
-                `}
-              >
-                {tab.toUpperCase()}
-              </button>
-            ))}
-          </div>
-
           {/* Code Content */}
           <div className="flex-1 overflow-auto">
             <pre className="p-6 text-sm text-gray-300 font-mono leading-relaxed whitespace-pre-wrap">
-              <code>{code[activeTab]}</code>
+              <code>{code}</code>
             </pre>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
