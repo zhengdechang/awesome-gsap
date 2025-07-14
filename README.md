@@ -2,6 +2,34 @@
 
 A comprehensive collection of GSAP (GreenSock Animation Platform) examples implemented across three different frontend frameworks: Vanilla HTML/JS, React, and Vue.js.
 
+## 🌟 Featured Demos
+
+Experience the power of GSAP animations with these stunning live demonstrations:
+
+### 🎨 [Folio - Creative Portfolio](https://awesome-gsap.vercel.app/folio)
+
+An elegant portfolio showcase featuring:
+
+- **Smooth scroll animations** with ScrollTrigger
+- **Interactive hover effects** and micro-interactions
+- **Timeline-based sequences** for seamless page transitions
+- **Parallax scrolling** effects for depth and immersion
+- **Text reveal animations** with staggered character effects
+- **Image galleries** with smooth transitions and filters
+
+### 🏆 [Honor - Product Showcase](https://awesome-gsap.vercel.app/honor)
+
+A sophisticated product presentation demonstrating:
+
+- **Complex animation sequences** with coordinated timelines
+- **SVG path animations** and morphing effects
+- **Scroll-triggered reveals** for content sections
+- **Interactive product demonstrations** with real-time feedback
+- **Video integration** with synchronized animations
+- **Mobile-responsive** animations optimized for all devices
+
+Both demos showcase advanced GSAP techniques including ScrollTrigger, Timeline management, and performance optimization for production-ready applications.
+
 ## 🎯 Project Overview
 
 This project demonstrates how to implement the same GSAP animations using different frontend frameworks, showcasing best practices and framework-specific patterns for each approach.
