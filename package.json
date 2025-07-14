@@ -15,7 +15,7 @@
     "serve:html": "cd html && python3 -m http.server 8080 || python -m http.server 8080",
     "build": "npm run build:vercel",
     "build:vercel": "npm run install:all && npm run build:react && npm run build:vue && npm run copy:builds",
-    "copy:builds": "mkdir -p dist && cp index.html dist/ && cp -r html/* dist/ && mkdir -p dist/react && cp -r react/out/* dist/react/ && mkdir -p dist/vue && cp -r vue/dist/* dist/vue/"
+    "copy:builds": "mkdir -p dist && cp index.html dist/ && mkdir -p dist/html && cp -r html/* dist/html/ && mkdir -p dist/react && cp -r react/out/* dist/react/ && mkdir -p dist/vue && cp -r vue/dist/* dist/vue/"
   },
   "keywords": [
     "gsap",
