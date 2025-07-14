@@ -35,6 +35,14 @@
       "dest": "/html/$1"
     },
     {
+      "src": "/folio$",
+      "dest": "/react/folio/index.html"
+    },
+    {
+      "src": "/folio/(.*)",
+      "dest": "/react/folio/$1"
+    },
+    {
       "src": "/$",
       "dest": "/react/index.html"
     },
