@@ -114,7 +114,9 @@ vercel --prod
 
 部署后可以通过以下路径访问：
 
-- `/` - 主页导航
+- **[/folio](https://awesome-gsap.vercel.app/folio)** - Folio 创意作品集演示
+- **[/honor](https://awesome-gsap.vercel.app/honor)** - Honor 产品展示演示
+- **[/](https://awesome-gsap.vercel.app/)** - 主页导航
 - `/html` - HTML 项目
 - `/react` - React 项目
 - `/vue` - Vue 项目

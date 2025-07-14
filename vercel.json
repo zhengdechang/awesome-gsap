@@ -43,6 +43,14 @@
       "dest": "/react/folio/$1"
     },
     {
+      "src": "/honor$",
+      "dest": "/react/honor/index.html"
+    },
+    {
+      "src": "/honor/(.*)",
+      "dest": "/react/honor/$1"
+    },
+    {
       "src": "/$",
       "dest": "/react/index.html"
     },

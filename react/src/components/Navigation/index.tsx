@@ -83,6 +83,7 @@ const Navigation = () => {
     { id: "scroll", label: "ScrollTrigger" },
     { id: "interactive", label: "Interactive" },
     { id: "advanced", label: "Advanced" },
+    { id: "honor", label: "Honor", isExternal: true, href: "/honor" },
     { id: "folio", label: "Folio", isExternal: true, href: "/folio" },
   ];
 
