@@ -33,7 +33,7 @@ export default function ModuleSection({
           {title}
         </h2>
         <div className="space-y-6">
-          {modules.map((module) => {
+          {modules?.map((module) => {
             const ModuleComponent = module.component;
 
             return (

@@ -354,6 +354,13 @@
   dependencies:
     csstype "^3.0.2"
 
+"@types/vanilla-tilt@^1.6.2":
+  version "1.6.2"
+  resolved "https://registry.npmjs.org/@types/vanilla-tilt/-/vanilla-tilt-1.6.2.tgz"
+  integrity sha512-KQRqLG1/5G768y3EYiwuiRqU+dpmxB8QuYdOqpd+4HM+E4RMGh2/xKfRUz7N38Al981ul0Km2vsb7CuxgLHBww==
+  dependencies:
+    vanilla-tilt "*"
+
 "@typescript-eslint/eslint-plugin@^5.4.2 || ^6.0.0 || ^7.0.0 || ^8.0.0":
   version "8.36.0"
   resolved "https://registry.npmjs.org/@typescript-eslint/eslint-plugin/-/eslint-plugin-8.36.0.tgz"
@@ -2576,6 +2583,11 @@ typed-array-length@^1.0.7:
     possible-typed-array-names "^1.0.0"
     reflect.getprototypeof "^1.0.6"
 
+typed.js@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.npmjs.org/typed.js/-/typed.js-2.1.0.tgz"
+  integrity sha512-bDuXEf7YcaKN4g08NMTUM6G90XU25CK3bh6U0THC/Mod/QPKlEt9g/EjvbYB8x2Qwr2p6J6I3NrsoYaVnY6wsQ==
+
 typescript@^5, typescript@>=3.3.1, typescript@>=4.8.4, "typescript@>=4.8.4 <5.9.0":
   version "5.8.3"
   resolved "https://registry.npmjs.org/typescript/-/typescript-5.8.3.tgz"
@@ -2629,6 +2641,11 @@ uri-js@^4.2.2:
   integrity sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==
   dependencies:
     punycode "^2.1.0"
+
+vanilla-tilt@*, vanilla-tilt@^1.8.1:
+  version "1.8.1"
+  resolved "https://registry.npmjs.org/vanilla-tilt/-/vanilla-tilt-1.8.1.tgz"
+  integrity sha512-hPB1XUsnh+SIeVSW2beb5RnuFxz4ZNgxjGD78o52F49gS4xaoLeEMh9qrQnJrnEn/vjjBI7IlxrrXmz4tGV0Kw==
 
 which-boxed-primitive@^1.1.0, which-boxed-primitive@^1.1.1:
   version "1.1.1"

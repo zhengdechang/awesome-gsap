@@ -83,6 +83,7 @@ const Navigation = () => {
     { id: "scroll", label: "ScrollTrigger" },
     { id: "interactive", label: "Interactive" },
     { id: "advanced", label: "Advanced" },
+    { id: "folio", label: "Folio", isExternal: true, href: "/folio" },
   ];
 
   return (
@@ -107,15 +108,24 @@ const Navigation = () => {
           <ul className="hidden md:flex space-x-8">
             {navItems.map((item, index) => (
               <li key={item.id}>
-                <button
-                  ref={(el) => {
-                    if (el) menuItemsRef.current[index] = el;
-                  }}
-                  onClick={() => scrollToSection(item.id)}
-                  className="text-white hover:text-green-400 transition-colors duration-200 font-medium cursor-pointer active:scale-95 transform"
-                >
-                  {item.label}
-                </button>
+                {item.isExternal ? (
+                  <a
+                    href={item.href}
+                    className="text-white hover:text-green-400 transition-colors duration-200 font-medium cursor-pointer active:scale-95 transform"
+                  >
+                    {item.label}
+                  </a>
+                ) : (
+                  <button
+                    ref={(el) => {
+                      if (el) menuItemsRef.current[index] = el;
+                    }}
+                    onClick={() => scrollToSection(item.id)}
+                    className="text-white hover:text-green-400 transition-colors duration-200 font-medium cursor-pointer active:scale-95 transform"
+                  >
+                    {item.label}
+                  </button>
+                )}
               </li>
             ))}
           </ul>

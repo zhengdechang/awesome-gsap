@@ -1,4 +1,11 @@
+/*
+ * @Description:
+ * @Author: Devin
+ * @Date: 2025-07-14 10:23:35
+ */
 import type { NextConfig } from "next";
+
+const isDev = process.env.NODE_ENV === "development";
 
 const nextConfig: NextConfig = {
   output: "export",
@@ -6,8 +13,13 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: "/react",
-  assetPrefix: "/react",
+  // Only use basePath and assetPrefix in production
+  ...(isDev
+    ? {}
+    : {
+        basePath: "/react",
+        assetPrefix: "/react",
+      }),
   eslint: {
     ignoreDuringBuilds: true,
   },
