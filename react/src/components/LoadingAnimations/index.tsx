@@ -39,7 +39,9 @@ export default function LoadingAnimations() {
         {[0, 1, 2].map((index) => (
           <div
             key={index}
-            ref={(el) => (dotsRef.current[index] = el)}
+            ref={(el) => {
+              dotsRef.current[index] = el;
+            }}
             className="w-5 h-5 bg-green-400 rounded-full shadow-lg"
             style={{
               boxShadow: "0 4px 15px rgba(0, 255, 136, 0.3)",

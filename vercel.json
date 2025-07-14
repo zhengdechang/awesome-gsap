@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/react$",
+      "dest": "/react/index.html"
+    },
+    {
+      "src": "/react/(.*)",
+      "dest": "/react/$1"
+    },
+    {
+      "src": "/vue$",
+      "dest": "/vue/index.html"
+    },
+    {
+      "src": "/vue/(.*)",
+      "dest": "/vue/$1"
+    },
+    {
+      "src": "/html$",
+      "dest": "/html/index.html"
+    },
+    {
+      "src": "/html/(.*)",
+      "dest": "/html/$1"
+    },
+    {
+      "src": "/$",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/html/$1"
+    }
+  ]
+}

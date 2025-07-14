@@ -99,6 +99,28 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - The frontend community for framework-specific best practices
 - Contributors and maintainers of React and Vue.js
 
+## 🚀 Vercel 部署
+
+这个项目已经配置好了 Vercel 部署，可以一键部署到 Vercel 平台：
+
+```bash
+# 安装 Vercel CLI
+npm i -g vercel
+
+# 登录并部署
+vercel login
+vercel --prod
+```
+
+部署后可以通过以下路径访问：
+
+- `/` - 主页导航
+- `/html` - HTML 项目
+- `/react` - React 项目
+- `/vue` - Vue 项目
+
+详细部署说明请查看 [DEPLOY_TO_VERCEL.md](./DEPLOY_TO_VERCEL.md)
+
 ## 📞 Support
 
 If you have any questions or need help with the examples, please open an issue in the repository.

@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+react/node_modules/
+vue/node_modules/
+
+# Build outputs (will be rebuilt)
+react/.next/
+react/out/
+vue/dist/
+
+# Development files
+*.log
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Git
+.git/
+.gitignore
+
+# Documentation (optional, remove if you want to include)
+README.md
+VERCEL_DEPLOYMENT.md
+
+# Test files
+*.test.*
+*.spec.*

@@ -12,7 +12,10 @@
     "build:all": "npm run build:react && npm run build:vue",
     "build:react": "cd react && npm run build",
     "build:vue": "cd vue && npm run build",
-    "serve:html": "cd html && python3 -m http.server 8080 || python -m http.server 8080"
+    "serve:html": "cd html && python3 -m http.server 8080 || python -m http.server 8080",
+    "build": "npm run build:vercel",
+    "build:vercel": "npm run install:all && npm run build:react && npm run build:vue && npm run copy:builds",
+    "copy:builds": "mkdir -p dist && cp index.html dist/ && cp -r html/* dist/ && mkdir -p dist/react && cp -r react/out/* dist/react/ && mkdir -p dist/vue && cp -r vue/dist/* dist/vue/"
   },
   "keywords": [
     "gsap",
@@ -23,14 +26,14 @@
     "frontend",
     "examples"
   ],
-  "author": "Your Name",
+  "author": "devin",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-username/awesome-gsap.git"
+    "url": "https://github.com/zhengdechang/awesome-gsap.git"
   },
   "bugs": {
-    "url": "https://github.com/your-username/awesome-gsap/issues"
+    "url": "https://github.com/zhengdechang/awesome-gsap/issues"
   },
-  "homepage": "https://github.com/your-username/awesome-gsap#readme"
+  "homepage": "https://github.com/zhengdechang/awesome-gsap#readme"
 }
